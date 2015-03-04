@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+
+        //定义对象
+        var User = function (name, age, sex) {
+            //定义对象的属性
+            this.name = name;
+            this.age = age || 0;
+            this.sex = sex;
+
+        }
+        //扩展静态方法
+        User.testStatic = function () {
+            alert(1);
+        }
+        User.version = "1.0.0";
+        //为对象扩展方法
+        User.prototype = {
+            say: function () {
+                alert("my name is " + this.name);
+            },
+            walk: function () {
+
+            }
+        }
+        //使用静态方法
+        User.testStatic();
+        //使用静态属性
+        alert(User.version);
+        //创建一个对象的实例
+        var user1 = new User("zhanglei", 27, "male");
+        //调用该实例的方法
+        user1.say();
+
+        alert(user1.age)
+    </script>
+</body>
+</html>
